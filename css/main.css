@@ -1,0 +1,128 @@
+@import "header.css";
+@import "hero.css";
+@import "articles.css";
+@import "gallery.css";
+@import "features.css";
+@import "testimonials.css";
+@import "team.css";
+@import "services.css";
+@import "skills.css";
+@import "works.css";
+@import "events.css";
+
+/* 
+  --bp-lg: 1200px;
+  --bp-md: 992px;
+  --bp-sm: 768px;
+  --bp-xs: 576px;
+ */
+
+:root {
+  --main-color: #2196f3;
+  --main-color-alt: #1787e0;
+  --main-transition: 0.3s;
+  --main-padding-top: 100px;
+  --main-padding-bottom: 100px;
+  --section-background: #ececec;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+::-webkit-scrollbar-track {
+  background-color: #777;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.spikes::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 30px;
+  z-index: 1;
+  background-image: linear-gradient(135deg, white 25%, transparent 25%),
+    linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  width: 5rem;
+  height: 5rem;
+
+  @media only screen and (max-width: 768px) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  z-index: 1000;
+  transition: all 0.5s ease;
+  transform: translateY(200%);
+  opacity: 0;
+}
+
+@keyframes up-down {
+  0%,
+  100% {
+    box-shadow: 0 0 10px 0 var(--main-color), 0 0 15px 0 var(--main-color),
+      0 0 20px 0 var(--main-color);
+  }
+
+  50% {
+    box-shadow: 0 0 2px 0 var(--main-color), 0 0 5px 0 var(--main-color),
+      0 0 8px 0 var(--main-color);
+  }
+}
+
+.scroll-to-top.active {
+  opacity: 1;
+  transform: translateY(0);
+  animation: up-down 2s ease-in-out infinite;
+}

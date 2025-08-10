@@ -1,0 +1,38 @@
+.events {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+
+.dots__bg {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  z-index: -1;
+}
+
+.events .dots__bg--left {
+  left: 0;
+  top: 70%;
+}
+
+.events .dots__bg--right {
+  right: 0;
+  top: 20%;
+}
+
+.events .btn {
+  margin-bottom: 6rem;
+}
+
+.events__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.events__item:nth-of-type(3) {
+  grid-column: 1 / -1;
+  justify-self: center;
+}
